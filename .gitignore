@@ -16,5 +16,9 @@ cloudfunctions/node_modules
 cloudfunctions/miniprogram_npm
 
 .env.pro
+.env.local
+deploy.json
+assets
+keys
 qrcode.jpg
 ./tmd
