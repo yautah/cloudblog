@@ -1,0 +1,18 @@
+{
+  "name": "waimai",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@miniprogram-component-plus/sticky": "^1.0.1",
+    "@miniprogram-component-plus/tabs": "^1.0.0",
+    "miniprogram-api-promise": "^1.0.4",
+    "mobx-miniprogram": "^4.13.2",
+    "mobx-miniprogram-bindings": "^1.2.1"
+  }
+}

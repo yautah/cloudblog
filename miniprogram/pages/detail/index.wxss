@@ -1,0 +1,9 @@
+/* pages/detail/index.wxss */
+page{
+background-color: #fff;
+font-size: 28rpx;
+}
+
+.intro{
+  line-height: 48rpx;
+}

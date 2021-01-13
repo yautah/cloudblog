@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "tm-searchbar": "/components/searchbar/index",
+    "mp-loading": "weui-miniprogram/loading/loading"
+
+  }
+}

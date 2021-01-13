@@ -1,0 +1,26 @@
+
+<view wx:if="{{article}}" class="container bg-white" style="background:#fff">
+  <view class="cu-card">
+    <view class="cu-item">
+      <view class="text-bold" style="font-size: 44rpx;color:#333333">{{article.title}}</view>
+      <view class="text-gray margin-top flex align-start justify-between">
+        <view>
+          <text style="color:#879ccd" class="cuIcon-profile margin-right-xs"></text>
+          <text style="color:#879ccd">{{article.authror || '小微君'}}</text>
+          <text class="margin-left" style="color:#728AAF">{{article.source || '问问百科'}}</text>
+        </view>
+        <view>{{article.views_count || 99}} 浏览</view>
+      </view>
+
+      <view class="intro margin-tb text-gray text-df">{{article.summary}}</view>
+
+      <view class="content margin-top-lg">
+        <parser html="{{article.content}}" 
+          lazy-load
+          tag-style="{{ {color: 'red'} }}"
+          />
+      </view>
+    </view>
+  </view>
+
+</view>

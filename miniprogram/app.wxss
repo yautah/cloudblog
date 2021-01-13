@@ -1,0 +1,44 @@
+
+@import "/libs/colorui/main.wxss";
+@import "/libs/colorui/icon.wxss";
+
+
+
+
+
+page {
+  height: 100%;
+  width: 100%;
+  /* background: #FAFAFA; */
+  /*background-color: #f5f6f9;*/
+  background-color: #ededed;
+
+
+  --mblue: #5e7195;
+}
+
+
+.text-mblue,
+.line-mblue,
+.lines-mblue {
+	color: var(--mblue);
+}
+
+
+.container {
+  min-height: 100vh;
+  box-sizing: border-box;
+  position:relative;
+  font-family: "PingFang-SC-Regular","SimSun","Microsoft Yahei";
+  font-variant-ligatures: none;
+  /*background-color: #f5f6f9;*/
+  background-color: #ededed;
+}
+
+
+
+
+.title{
+  font-size: 36rpx !important;
+  line-height: 50rpx !important;
+}

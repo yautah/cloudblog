@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "mp-tabbar": "weui-miniprogram/tabbar/tabbar"
+  }
+}

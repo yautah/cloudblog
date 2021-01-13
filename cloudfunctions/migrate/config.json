@@ -1,0 +1,5 @@
+{
+  "permissions": {
+    "openapi": ["pluginManager.applyPlugin", "subscribeMessage.addTemplate"]
+  }
+}

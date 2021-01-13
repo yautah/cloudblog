@@ -1,0 +1,39 @@
+{
+  "envId": "{{env.ENV_ID}}",
+  "version": "2.0",
+  "$schema": "https://framework-1258016615.tcloudbaseapp.com/schema/latest.json",
+  "framework": {
+    "name": "{{env.FRAMEWORK_NAME}}",
+    "plugins": {
+      "mp": {
+        "use": "@cloudbase/framework-plugin-mp",
+        "inputs": {
+          "appid": "{{env.WX_APPID}}",
+          "privateKeyPath": "{{env.WX_CI_KEY_PATH}}",
+          "ignores": ["node_modules/**/*"],
+          "deployMode": "{{env.APP_DEPLOY_MODE}}",
+          "previewOptions": {
+            "desc": "一键预览",
+            "setting": {
+              "es7": true,
+              "minify": true
+            },
+            "qrcodeOutputPath": "./qrcode.jpg",
+            "pagePath": "pages/index/index",
+            "searchQuery": "",
+            "scene": 1000
+          },
+
+          "uploadOptions": {
+            "version": "{{env.APP_VERSION}}",
+            "desc": "{{env.APP_DESC}}",
+            "setting": {
+              "es7": true,
+              "minify": true
+            }
+          }
+        }
+      }
+    }
+  }
+}

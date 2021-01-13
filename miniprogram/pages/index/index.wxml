@@ -1,0 +1,76 @@
+<!--index.wxml-->
+
+<page-meta >
+
+  <nav-bar id="navbar" show animated="{{false}}" back="{{false}}" background="#ffffff">
+    <view slot="left" class="flex align-left">
+      <navigator 
+        hover-class="none"
+        url="/pages/search/index"
+        class="search-form round flex align-center bg-white padding-xs"
+        style="width:400rpx;background-color:#ebeced">
+        <text class="padding-left-sm cuIcon-search txt-gray"> 搜你感兴趣的内容</text>
+      </navigator>
+    </view>
+  </nav-bar>
+
+  <add-tips name="hahahha" custom />
+
+  <view wx:if="{{allCategories}}" class="container" style="margin-top:90rpx">
+    <view class="padding-lr bg-white" 
+      style="z-index:99;position:fixed;width:100vw;height:90rpx;top:{{navbarHeight-1}}px;border-bottom: 1px solid #dfdfdf">
+      <mp-tabs 
+        slot="left"
+        data-from="mp"
+        style="width: calc({{menuInfo.left}}px - 30px);"
+        tab-underline-color="#000"
+        tabs="{{allCategories}}" 
+        activeTab="{{currentTab}}" 
+        tab-class="mp-tab"
+        swiperClass="weui-tabs-swiper"
+        bindtabclick="handleSwitchTab"
+        bindchange=""
+        activeClass="tab-bar-title__selected" />
+    </view>
+
+    <view id="anchor"></view>
+
+    <view class="cu-card article no-card" style="background: transparent;">
+      <block wx:for="{{articles}}" wx:key="_id">
+        <navigator 
+          url="/pages/detail/index?id={{item._id}}"
+          hover-class="none"
+          class="cu-item shadow" style="margin-bottom: 8rpx;">
+          <view class="title">
+            <view class="padding-tb">{{item.title}}</view>
+          </view>
+          <view class="content">
+            <image
+              src="{{item.thumbnail}}" 
+              mode="aspectFill"
+              binderror="onImageError"
+              data-id="{{item._id}}"
+              ></image>
+            <view class="desc">
+              <view class="text-content">{{item.summary}}</view>
+              <view class="flex align-center justify-between margin-top-sm">
+                <view class="cu-tag bg-gray light sm round">{{item.tags}}</view>
+                <view>
+                  <text class="cuIcon-read text-sm text-gray"> {{item.views_count || 0}}</text>
+                  <text class="cuIcon-share text-sm text-gray margin-left"> {{item.shares_count || 0}}</text>
+                </view>
+              </view>
+            </view>
+          </view>
+        </navigator>
+
+      </block>
+    </view>
+
+
+
+
+    <mp-loading wx:if="{{showPagination}}" type="circle"></mp-loading>
+  </view>
+
+</page-meta>

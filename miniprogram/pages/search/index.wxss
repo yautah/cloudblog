@@ -1,0 +1,22 @@
+/* miniprogram/pages/settings/signs/statics/search/index.wxss */
+.search-bar.weui-search-bar {
+  padding: 0;
+}
+
+
+.search-bar.weui-search-bar {
+  background-color:white !important;
+  border-radius:30rpx !important;
+}
+
+
+.search-bar .weui-search-bar__form {
+  background-color: #ebeced !important;
+  border-radius:30rpx !important;
+}
+
+
+/*.search-bar .weui-search-bar__box {*/
+  /*background-color: red !important;*/
+  /*border-radius:30rpx !important;*/
+/*}*/

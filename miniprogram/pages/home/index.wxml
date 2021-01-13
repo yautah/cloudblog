@@ -1,0 +1,63 @@
+<!--index.wxml-->
+
+<page-meta >
+  <view class="container" style="background-color:#fff">
+
+    <!--<add-tips name="hahahha" />-->
+
+    <view class="padding-xl flex align-center justify-center bg-white">
+      <text style="font-size:60rpx;color:#333;font-weight:bold">问问百科</text>
+    </view>
+
+    <navigator 
+      hover-class="none"
+      url="/pages/search/index"
+      class="padding flex align-center justify-center bg-white">
+      <view class="cu-bar search bg-white" style="width:100%">
+        <view class="search-form flex-sub" style="margin:0;border: 1px solid #3481f7;background:#fff">
+          <text class="cuIcon-search"></text>
+          <view class="text-gray">搜索一下</view>
+        </view>
+        <view class="action" style="width:160rpx">
+          <button class="cu-btn bg-blue" style="border-radius: 0rpx 10rpx 10rpx 0rpx">搜索</button>
+        </view>
+      </view> 
+    </navigator>
+
+    <view class="cu-card article no-card" style="background: transparent;">
+      <block wx:for="{{articles}}" wx:key="_id">
+        <navigator 
+          url="/pages/detail/index?id={{item._id}}"
+          hover-class="none"
+          class="cu-item shadow" style="margin-bottom: 8rpx;">
+          <view class="title">
+            <view class="padding-tb">{{item.title}}</view>
+          </view>
+          <view class="content">
+            <image wx:if="{{errorImages[item.id]}}"
+              src="{{item.thumbnail}}" 
+              mode="aspectFill"
+              binderror="onImageError"
+              data-id="{{item._id}}"
+              ></image>
+            <view class="desc">
+              <view class="text-content">{{item.summary}}</view>
+              <view class="flex align-center justify-between margin-top-sm">
+                <!--<view class="cu-tag bg-gray light sm round">正义天使</view>-->
+                <view class="cu-tag bg-gray light sm round">{{item.tags}}</view>
+                <view>
+                  <text class="cuIcon-read text-sm text-gray"> 1000</text>
+                  <text class="cuIcon-share text-sm text-gray margin-left"> 2000</text>
+                </view>
+              </view>
+            </view>
+          </view>
+        </navigator>
+      </block>
+    </view>
+
+
+    <mp-loading wx:if="{{showPagination}}" type="circle"></mp-loading>
+  </view>
+
+</page-meta>

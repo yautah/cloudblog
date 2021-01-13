@@ -1,0 +1,81 @@
+{
+  "envId": "{{env.ENV_ID}}",
+  "version": "2.0",
+  "$schema": "https://framework-1258016615.tcloudbaseapp.com/schema/latest.json",
+  "framework": {
+    "name": "blog",
+
+    "hooks": {
+        "postDeploy": {
+            "type": "callFunction",
+            "functions":[
+                {
+                    "functionName": "migrate"
+                }
+            ]
+        }
+    },
+
+    "plugins": {
+        "db": {
+            "use": "@cloudbase/framework-plugin-database",
+            "inputs": {
+                "collections": [
+                    { "collectionName": "migrates", "description": "migrates" },
+                    { "collectionName": "categories", "description": "categories" },
+                    { "collectionName": "articles", "description": "articles" }
+                ]
+            }
+        },
+        "function": {
+            "use": "@cloudbase/framework-plugin-function",
+            "inputs": {
+                "functionRootPath": "./cloudfunctions",
+                "functions": [
+                    {
+                        "name": "migrate",
+                        "timeout": 5,
+                        "installDependency": true,
+                        "ignore": ["*.md", "node_modules", "node_modules/**/*", "miniprogram_npm", "miniprogram_npm/**/*"]
+                    },
+                    {
+                        "name": "api",
+                        "timeout": 5,
+                        "installDependency": true,
+                        "ignore": ["*.md", "node_modules", "node_modules/**/*", "miniprogram_npm", "miniprogram_npm/**/*"]
+                    }
+                ]
+            }
+        },
+        "mp": {
+            "use": "@cloudbase/framework-plugin-mp",
+            "inputs": {
+                "appid": "{{env.WX_APPID}}",
+                "privateKeyPath": "{{env.WX_CI_KEY_PATH}}",
+                "ignores": ["node_modules/**/*"],
+                "deployMode": "upload",
+                "previewOptions": {
+                    "desc": "一键预览",
+                    "setting": {
+                        "es7": true,
+                        "minify": true
+                    },
+                    "qrcodeOutputPath": "./qrcode.jpg",
+                    "pagePath": "pages/index/index",
+                    "searchQuery": "",
+                    "scene": 1000
+                },
+
+                "uploadOptions": {
+                    "version": "1.0",
+                    "desc": "云开发微博客",
+                    "setting": {
+                        "es7": true,
+                        "minify": true
+                    }
+                }
+            }
+        }
+    }
+  }
+}

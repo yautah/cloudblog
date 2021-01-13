@@ -1,0 +1,43 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/detail/index",
+    "pages/about/index"
+  ],
+  "window": {
+    "navigationBarTitleText": "微博客",
+    "backgroundColor": "#ededed",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#bfbfbf",
+    "selectedColor": "#222222",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/tabs/index.png",
+        "selectedIconPath": "images/tabs/index_focus.png"
+      },
+      {
+        "pagePath": "pages/about/index",
+        "text": "我的",
+        "iconPath": "images/tabs/mine.png",
+        "selectedIconPath": "images/tabs/mine_focus.png"
+      }
+
+    ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2",
+  "useExtendedLib": {
+    "weui": true
+  },
+
+  "usingComponents": {
+  }
+}

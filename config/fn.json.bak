@@ -1,0 +1,63 @@
+{
+    "envId": "{{env.ENV_ID}}",
+    "version": "2.0",
+    "$schema": "https://framework-1258016615.tcloudbaseapp.com/schema/latest.json",
+    "framework": {
+        "name": "waimai",
+        "plugins": {
+            "db": {
+                "use": "@cloudbase/framework-plugin-database",
+                "inputs": {
+                    "collections": [
+                        { "collectionName": "migrates", "description": "migrates" },
+                        { "collectionName": "settings", "description": "settings" },
+                        { "collectionName": "coupons", "description": "coupons" },
+                        { "collectionName": "ads", "description": "ads" },
+                        { "collectionName": "apps", "description": "apps" },
+                        { "collectionName": "subscriptions", "description": "subscriptions" },
+                        { "collectionName": "notifications", "description": "notifications" },
+                        { "collectionName": "group", "description": "group" }
+                    ]
+                }
+            },
+            "function": {
+                "use": "@cloudbase/framework-plugin-function",
+                "inputs": {
+                    "functionRootPath": "./cloudfunctions",
+                    "functions": [
+                        {
+                            "name": "migrate",
+                            "installDependency": true,
+                            "codeSecret": "{{env.CODE_SECRET}}",
+                            "ignore": ["*.md", "node_modules", "node_modules/**/*", "miniprogram_npm", "miniprogram_npm/**/*"]
+                        },
+                        {
+                            "name": "api",
+                            "aclRule": { "invoke": true },
+                            "installDependency": true,
+                            "codeSecret": "{{env.CODE_SECRET}}",
+                            "ignore": ["*.md", "node_modules", "node_modules/**/*", "miniprogram_npm", "miniprogram_npm/**/*"]
+                        },
+                        {
+                            "name": "service",
+                            "installDependency": true,
+                            "codeSecret": "{{env.CODE_SECRET}}",
+                            "ignore": ["*.md", "node_modules", "node_modules/**/*", "miniprogram_npm", "miniprogram_npm/**/*"]
+                        },
+                        {
+                            "name": "notification",
+                            "installDependency": true,
+                            "ignore": ["*.md", "node_modules", "node_modules/**/*", "miniprogram_npm", "miniprogram_npm/**/*"],
+                            "triggers": [{
+                                "name": "notification",
+                                "type": "timer",
+                                "config": "0 */30 18-23 * * * *"
+                            }]
+                        }
+                    ]
+                }
+            } 
+        }
+
+    }
+}

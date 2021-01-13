@@ -1,0 +1,29 @@
+
+<view class="container">
+  <block wx:if="{{style=='grid'}}">
+    <view class="grid col-{{col || 4}}">
+      <block wx:for="{{apps}}" wx:key="index">
+        <view class="grid-item" bind:tap="handleNavApp" data-appid="{{item.appid}}" data-path="{{item.path}}">
+          <image class="grid-item-icon icon-{{iconStyle}}" mode="widthFix"  src="{{item.icon}}"></image>     
+          <text class="grid-item-name">{{item.name}}</text>
+        </view>
+      </block>
+    </view> 
+  </block>
+
+
+  <block wx:elif="{{style=='list'}}">
+    <view class="list">
+      <block wx:for="{{apps}}" wx:key="index">
+        <view class="list-item" bind:tap="handleNavApp" data-appid="{{item.appid}}" data-path="{{item.path}}">
+          <image src="{{item.icon}}" class="list-item-icon icon-{{iconStyle}}" />
+            <view class="list-item-content">
+              <view class="list-item-name">{{item.name}}</view>
+              <view class="list-item-desc">{{item.desc}}</view>
+            </view>
+            <view class="list-item-action"><view class="arrow"></view></view>
+        </view>
+      </block>
+    </view>
+  </block>
+</view>

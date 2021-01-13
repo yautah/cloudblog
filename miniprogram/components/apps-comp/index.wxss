@@ -1,0 +1,151 @@
+.container {
+  /* padding-left: 30rpx; */
+  /* padding-right: 30rpx; */
+  width: 100%;
+  box-sizing:border-box;
+}
+
+.icon-square{
+  border: 1px solid #efefef;
+  border-radius: 8rpx;
+}
+
+.icon-round {
+  border: 1px solid #efefef;
+  border-radius: 50%;
+}
+
+
+/* 宫格样式 begin------------------------- */
+
+.grid {
+  width: 100%;
+  display:flex;
+  align-items:center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.grid.col-2>view {
+    width: 50%;
+}
+.grid.col-3>view {
+    width: 33.333333333333333333%;
+}
+
+.grid.col-4>view {
+    width: 25%;
+}
+.grid.col-5>view {
+    width: 20%;
+}
+
+
+.grid-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position:relative;
+  margin-bottom: 30rpx;
+}
+
+.grid-item:nth-of-type(3n+1) {
+  /* align-items: flex-end; */
+  /* background-color: red; */
+}
+
+
+.grid-item:nth-of-type(4n+1) {
+  /* align-items: flex-start; */
+  /* background-color: blue; */
+}
+
+
+.grid-item-icon {
+  width: 60%;
+}
+
+.grid-item-name {
+  color: #666;
+  margin-top: 8rpx;
+  font-size: 26rpx;
+  text-align:center;
+}
+
+/* 宫格样式 end-------------------------- */
+
+
+/* 列表样式 end-------------------------- */
+
+
+.list {
+  position:relative;
+}
+
+
+
+.list-item {
+    position: relative;
+    display: flex;
+    padding-right: 10rpx;
+    height: 140rpx;
+    background-color: var(--white);
+    justify-content: flex-end;
+    align-items: center;
+    transition: all .6s ease-in-out 0s;
+    transform: translateX(0rpx);
+}
+
+.list-item::after {
+  content: "";
+  position: absolute;
+  height: 1px;
+  background-color:#efefef;
+  left: 146rpx;
+  bottom:0;
+  right: 0;
+}
+
+.list-item-icon{
+  position: absolute;
+  left: 30rpx;
+  width: 96rpx;
+  height: 96rpx;
+  font-size: 2em;
+}
+
+
+.list-item-content {
+  position: absolute;
+  left: 146rpx;
+  width: calc(100% - 96rpx - 60rpx - 120rpx - 20rpx);
+  line-height: 1.6em;
+}
+
+.list-item-name{
+  font-size: 30rpx;
+  color: #222;
+}
+
+.list-item-desc {
+  font-size: 24rpx;
+  color: #666;
+}
+
+.list-item-action {
+  position:absolute;
+  right: 30rpx;
+  height: 96rpx;
+  width: 96rpx;
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+}
+
+.arrow {
+  width: 20rpx;
+  height: 20rpx;
+  border-top: 1px solid #999;
+  border-right: 1px solid #999;
+  transform: rotate(45deg);
+}

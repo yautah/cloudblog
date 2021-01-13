@@ -1,0 +1,77 @@
+{
+  "envId": "{{env.ENV_ID}}",
+  "version": "2.0",
+  "$schema": "https://framework-1258016615.tcloudbaseapp.com/schema/latest.json",
+  "framework": {
+    "name": "waimai11",
+    "plugins": {
+      "db": {
+        "use": "@cloudbase/framework-plugin-database",
+        "inputs": {
+          "collections": [
+            { "collectionName": "migrates", "description": "" },
+            { "collectionName": "settings", "description": "" },
+            { "collectionName": "coupons", "description": "" },
+            { "collectionName": "ads", "description": "" },
+            { "collectionName": "apps", "description": "" }
+          ]
+        }
+      },
+
+      "function": {
+        "use": "@cloudbase/framework-plugin-function",
+        "inputs": {
+          "functionRootPath": "./cloudfunctions",
+          "functions": [
+            {
+              "name": "api",
+              "installDependency": true,
+              "codeSecret": "{{env.CODE_SECRET}}",
+              "ignore": ["*.md", "node_modules", "node_modules/**/*", "miniprogram_npm", "miniprogram_npm/**/*"]
+            },
+            {
+              "name": "service",
+              "installDependency": true,
+              "codeSecret": "{{env.CODE_SECRET}}",
+              "ignore": ["*.md", "node_modules", "node_modules/**/*", "miniprogram_npm", "miniprogram_npm/**/*"],
+              "params": {
+                "$url": "/db/init",
+                "auth_code": "{{env.AUTH_CODE}}"
+              }
+            }
+          ]
+        }
+      },
+
+      "mp": {
+        "use": "@cloudbase/framework-plugin-mp",
+        "inputs": {
+          "appid": "{{env.WX_APPID}}",
+          "privateKeyPath": "{{env.WX_CI_KEY_PATH}}",
+          "ignores": ["node_modules/**/*"],
+          "deployMode": "{{env.APP_DEPLOY_MODE}}",
+          "previewOptions": {
+            "desc": "一键预览",
+            "setting": {
+              "es7": true,
+              "minify": true
+            },
+            "qrcodeOutputPath": "./qrcode.jpg",
+            "pagePath": "pages/index/index",
+            "searchQuery": "",
+            "scene": 1000
+          },
+
+          "uploadOptions": {
+            "version": "{{env.APP_VERSION}}",
+            "desc": "{{env.APP_DESC}}",
+            "setting": {
+              "es7": true,
+              "minify": true
+            }
+          }
+        }
+      }
+    }
+  }
+}

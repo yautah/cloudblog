@@ -1,0 +1,24 @@
+<view class="weui-search-bar {{searchState ? 'weui-search-bar_focusing' : ''}} {{extClass}}">
+    <view class="weui-search-bar__form">
+        <view class="weui-search-bar__box">
+            <icon class="weui-icon-search" type="search" size="12"></icon>
+            <form bindsubmit="handleSearch">
+              <input name="q" 
+                type="text" 
+                confirm-type="search"
+                bindconfirm="handleSearch"
+                class="weui-search-bar__input" 
+                placeholder="{{placeholder}}" 
+                value="{{value}}" 
+                focus="{{focus}}" 
+                bindblur="inputBlur" bindfocus="inputFocus" bindinput="inputChange" />
+            </form>
+            <text class="weui-icon-clear" hover-class="weui-active" wx:if="{{value.length > 0}}" bindtap="clearInput"></text>
+        </view>
+        <label class="weui-search-bar__label" bindtap="showInput">
+            <icon class="weui-icon-search" type="search" size="12"></icon>
+            <text class="weui-search-bar__text">搜索</text>
+        </label>
+    </view>
+    <view wx:if="{{cancel && searchState}}" class="weui-search-bar__cancel-btn" bindtap="hideInput">{{cancelText}}</view>
+</view>

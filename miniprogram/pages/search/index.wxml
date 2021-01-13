@@ -1,0 +1,59 @@
+<view class="container" style="background-color:#fff">
+  <view class="padding-lr padding-top flex align-center">
+    <tm-searchbar 
+      class="flex-sub"
+      ext-class="search-bar"
+      focus
+      bindcancel="handleNavBack"
+      bindsearch="onTapSearch"
+      cancel="{{true}}"
+      cancel-text="取消"
+      placeholder="搜索你感兴趣的内容"></tm-searchbar>
+  </view>
+
+    <view class="cu-card article no-card" style="background: transparent;">
+    <block wx:for="{{searchArticles}}" wx:key="_id">
+      <navigator 
+        url="/pages/detail/index?id={{item._id}}"
+        hover-class="none"
+        class="cu-item shadow" style="margin-bottom: 12rpx;">
+        <view class="title">
+          <view class="padding-tb">{{item.title}}</view>
+        </view>
+        <view class="content">
+          <image wx:if="{{errorImages[item.id]}}"
+            src="{{item.thumbnail}}" 
+            mode="aspectFill"
+            binderror="onImageError"
+            data-id="{{item._id}}"
+            ></image>
+          <view class="desc">
+            <view class="text-content">{{item.summary}}</view>
+            <view class="flex align-center justify-between margin-top-sm">
+              <!--<view class="cu-tag bg-gray light sm round">正义天使</view>-->
+                <view class="cu-tag bg-gray light sm round">{{item.tags}}</view>
+              <view>
+                <text class="cuIcon-read text-sm text-gray"> 1000</text>
+                <text class="cuIcon-share text-sm text-gray margin-left"> 2000</text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </navigator>
+    </block>
+  </view>
+
+
+  <!--<block wx:else>-->
+    <!--<view class="padding-xl flex align-center justify-center">-->
+      <!--<text class="text-gray">暂无数据</text>-->
+    <!--</view>-->
+  <!--</block>-->
+
+
+  <mp-loading wx:if="{{showSearchPagination}}" type="circle"></mp-loading>
+
+
+</view>
+
+

@@ -1,0 +1,144 @@
+{
+  "miniprogramRoot": "miniprogram/",
+  "cloudfunctionRoot": "cloudfunctions/",
+  "setting": {
+    "urlCheck": true,
+    "es6": true,
+    "enhance": true,
+    "postcss": true,
+    "preloadBackgroundData": false,
+    "minified": true,
+    "newFeature": true,
+    "coverView": true,
+    "nodeModules": true,
+    "autoAudits": false,
+    "showShadowRootInWxmlPanel": true,
+    "scopeDataCheck": false,
+    "uglifyFileName": false,
+    "checkInvalidKey": true,
+    "checkSiteMap": true,
+    "uploadWithSourceMap": true,
+    "compileHotReLoad": true,
+    "useMultiFrameRuntime": false,
+    "useApiHook": true,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    },
+    "enableEngineNative": false,
+    "bundle": true,
+    "useIsolateContext": true,
+    "useCompilerModule": true,
+    "userConfirmedUseCompilerModuleSwitch": false,
+    "userConfirmedBundleSwitch": true,
+    "packNpmManually": false,
+    "packNpmRelationList": [],
+    "minifyWXSS": true
+  },
+  "appid": "wx8683cbbd4ba55d7f",
+  "projectname": "%E5%8D%9A%E5%AE%A2",
+  "libVersion": "2.14.1",
+  "simulatorType": "wechat",
+  "simulatorPluginLibVersion": {},
+  "cloudfunctionTemplateRoot": "cloudfunctionTemplate",
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "id": -1,
+          "name": "db guide",
+          "pathName": "pages/databaseGuide/databaseGuide",
+          "query": ""
+        },
+        {
+          "name": "pages/about/index",
+          "pathName": "pages/about/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/settings/global/index",
+          "pathName": "pages/settings/global/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/settings/index",
+          "pathName": "pages/settings/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "apps",
+          "pathName": "pages/settings/apps/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "coupons",
+          "pathName": "pages/settings/coupons/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "dingyue",
+          "pathName": "pages/settings/subscription/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "group",
+          "pathName": "pages/settings/group/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "result",
+          "pathName": "pages/settings/notify/result/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "sign",
+          "pathName": "pages/sign/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "signSetting",
+          "pathName": "pages/settings/signs/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/sign/index",
+          "pathName": "pages/sign/index",
+          "query": "inviter=866YduoY&source=sign&navigate=%2Fpages%2Fsign%2Fzhuli%2Findex%3Finviter%3D866YduoY%26sign%3Db45a21d55ff2f3c9038ec2717f2d6a30",
+          "scene": null
+        },
+        {
+          "name": "pages/settings/signs/statics/index",
+          "pathName": "pages/settings/signs/statics/index",
+          "query": "inviter=HSutonjF&source=sign&navigate=%2Fpages%2Fsign%2Fzhuli%2Findex%3Finviter%3DHSutonjF%26sign%3D2424fa985fed66b200ed10a86ef5b54d",
+          "scene": null
+        },
+        {
+          "name": "search",
+          "pathName": "pages/search/index",
+          "query": "inviter=866YduoY&source=sign&navigate=%2Fpages%2Fsign%2Fzhuli%2Findex%3Finviter%3D866YduoY%26sign%3Db45a21d55ff2f3c9038ec2717f2d6a30",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

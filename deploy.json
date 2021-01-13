@@ -1,0 +1,20 @@
+{
+  "name": "tcb一键部署工具",
+  "version": "1.0",
+  "frameworkName": "waimai",
+  "mp": {
+    "version": "2.0",
+    "desc": "裂变功能上线",
+    "deployMode": "upload"
+  },
+  "clients": [
+    {
+      "name": "本地测试(皇室阵线联盟)",
+      "version": "ultimate",
+      "appid": "wx8683cbbd4ba55d7f",
+      "envid": "crdaida-5gjh9ypg83d4ca25",
+      "secretId": "AKIDPkpdAQd9XfNoytDy87pVu2tTTFp8s1YX",
+      "secretKey": "rd8MIzQv9AuNeeoiLdeaFdlzvay5uVpL"
+    }
+  ]
+}

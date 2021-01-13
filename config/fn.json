@@ -1,0 +1,81 @@
+{
+  "envId": "{{env.ENV_ID}}",
+  "version": "2.0",
+  "$schema": "https://framework-1258016615.tcloudbaseapp.com/schema/latest.json",
+  "framework": {
+    "name": "{{env.FRAMEWORK_NAME}}",
+    "plugins": {
+      "auth": {
+        "use": "@cloudbase/framework-plugin-auth",
+        "inputs": {
+          "configs": [
+            {
+              "platform": "ANONYMOUS",
+              "status": "ENABLE"
+            }
+          ]
+        }
+      },
+      "db": {
+        "use": "@cloudbase/framework-plugin-database",
+        "inputs": {
+          "collections": [
+            { "collectionName": "migrates", "description": "migrates" },
+            { "collectionName": "settings", "description": "settings" },
+            { "collectionName": "coupons", "description": "coupons" },
+            { "collectionName": "ads", "description": "ads" },
+            { "collectionName": "apps", "description": "apps" },
+            { "collectionName": "subscriptions", "description": "subscriptions" },
+            { "collectionName": "notifications", "description": "notifications" },
+            { "collectionName": "group", "description": "group" },
+            { "collectionName": "tabs", "description": "tabs" },
+            { "collectionName": "users", "description": "users" },
+            { "collectionName": "signs", "description": "signs" },
+            { "collectionName": "user_signs", "description": "user_signs" }
+          ]
+        }
+      },
+      "function": {
+        "use": "@cloudbase/framework-plugin-function",
+        "inputs": {
+          "functionRootPath": "./cloudfunctions",
+          "functions": [
+            {
+              "name": "migrate",
+              "timeout": 5,
+              "installDependency": true,
+              "envVariables": {"TZ": "Asia/Shanghai"},
+              "codeSecret": "{{env.CODE_SECRET}}",
+              "ignore": ["*.md", "node_modules", "node_modules/**/*", "miniprogram_npm", "miniprogram_npm/**/*"]
+            },
+            {
+              "name": "api",
+              "timeout": 5,
+              "aclRule": { "invoke": true },
+              "envVariables": {"TZ": "Asia/Shanghai"},
+              "installDependency": true,
+              "codeSecret": "{{env.CODE_SECRET}}",
+              "ignore": ["*.md", "node_modules", "node_modules/**/*", "miniprogram_npm", "miniprogram_npm/**/*"]
+            },
+            {
+              "name": "service",
+              "timeout": 20,
+              "envVariables": {"TZ": "Asia/Shanghai"},
+              "installDependency": true,
+              "codeSecret": "{{env.CODE_SECRET}}",
+              "ignore": ["*.md", "node_modules", "node_modules/**/*", "miniprogram_npm", "miniprogram_npm/**/*"]
+            },
+            {
+              "name": "notification",
+              "timeout": 5,
+              "envVariables": {"TZ": "Asia/Shanghai"},
+              "installDependency": true,
+              "codeSecret": "{{env.CODE_SECRET}}",
+              "ignore": ["*.md", "node_modules", "node_modules/**/*", "miniprogram_npm", "miniprogram_npm/**/*"]
+            }
+          ]
+        }
+      }
+    }
+  }
+}
