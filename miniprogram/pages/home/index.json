@@ -3,6 +3,6 @@
     "mp-loading": "weui-miniprogram/loading/loading",
     "add-tips": "../../components/add-tips/index",
     "nav-bar": "../../components/navigation-bar/navigation-bar",
-    "mp-tabs": "/miniprogram_npm/@miniprogram-component-plus/tabs/index"
+    "mp-tabs": "@miniprogram-component-plus/tabs"
   }
 }
