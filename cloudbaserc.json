@@ -1,5 +1,5 @@
 {
-  "envId": "{{env.ENV_ID}}",
+  "envId": "{{ENV_ID}}",
   "version": "2.0",
   "$schema": "https://framework-1258016615.tcloudbaseapp.com/schema/latest.json",
   "framework": {
@@ -50,8 +50,8 @@
         "mp": {
             "use": "@cloudbase/framework-plugin-mp",
             "inputs": {
-                "appid": "{{env.WX_APPID}}",
-                "privateKeyPath": "{{env.WX_CI_KEY_PATH}}",
+                "appid": "{{WX_APPID}}",
+                "privateKeyPath": "{{WX_CI_KEY_PATH}}",
                 "ignores": ["node_modules/**/*"],
                 "deployMode": "upload",
                 "previewOptions": {
