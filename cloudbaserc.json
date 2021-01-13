@@ -64,7 +64,7 @@
                 }
             },
             "mp": {
-                "use": "@cloudbase/framework-plugin-mp",
+                "use": "@cloudbase/framework-plugin-mp@1.5.7",
                 "inputs": {
                     "appid": "{{env.WX_APPID}}",
                     "privateKey": "{{env.WX_CI_KEY}}",
