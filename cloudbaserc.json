@@ -13,7 +13,7 @@
                     "default": ""
                 },
                 "WX_CI_KEY": {
-                    "description": "小程序上传密钥,获取方式见：<a href='https://framework-1258016615.tcloudbaseapp.com/mp-key-tool/'>查看</a>",
+                    "description": "小程序上传密钥,获取方式见：https://framework-1258016615.tcloudbaseapp.com/mp-key-tool",
                     "required": true,
                     "default": ""
                 }
@@ -64,7 +64,7 @@
                 }
             },
             "mp": {
-                "use": "@cloudbase/framework-plugin-mp@1.5.7",
+                "use": "@cloudbase/framework-plugin-mp@1.5.8",
                 "inputs": {
                     "appid": "{{env.WX_APPID}}",
                     "privateKey": "{{env.WX_CI_KEY}}",
