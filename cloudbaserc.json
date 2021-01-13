@@ -67,7 +67,7 @@
                 "use": "@cloudbase/framework-plugin-mp",
                 "inputs": {
                     "appid": "{{env.WX_APPID}}",
-                    "privateKeyPath": "{{env.WX_CI_KEY}}",
+                    "privateKey": "{{env.WX_CI_KEY}}",
                     "ignores": ["node_modules/**/*"],
                     "deployMode": "upload",
                     "previewOptions": {
