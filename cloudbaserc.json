@@ -68,6 +68,7 @@
                 "inputs": {
                     "appid": "{{env.WX_APPID}}",
                     "privateKey": "{{env.WX_CI_KEY}}",
+                    "ignores": ["node_modules/**/*"],
                     "deployMode": "upload",
                     "previewOptions": {
                         "desc": "一键预览",
