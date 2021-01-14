@@ -4,6 +4,12 @@
 
 > 微信小程序，基于腾讯云开发，旨在完整的展示如何基于TCB cli，Tcb Framework和一键快速部署按钮对云开发项目进行快速的迁移和部署。
 
+### 效果预览
+
+<p align="center">
+ <img src="https://cdn.nlark.com/yuque/0/2019/jpeg/282518/1577790030151-assets/web-upload/856d0239-48c1-4dfb-9ab5-dac2e4aaacc6.jpeg?x-oss-process=image/resize,w_275"/>
+
+</p>
 
 
 ## 项目依赖
