@@ -7,9 +7,9 @@
 ### 效果预览
 
 <p align="center">
- <img src="https://github.com/yautah/cloudblog/blob/master/snaps/index.png"/>
+ <img src="https://github.com/yautah/cloudblog/blob/master/snaps/index.png" style="width:338px;height:707px" />
  
- <img src="https://github.com/yautah/cloudblog/blob/master/snaps/deploy.png"/>
+ <img src="https://github.com/yautah/cloudblog/blob/master/snaps/deploy.png" style="width:50%;height:50%" />
  
 </p>
 
