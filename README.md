@@ -7,8 +7,10 @@
 ### 效果预览
 
 <p align="center">
- <img src="https://cdn.nlark.com/yuque/0/2019/jpeg/282518/1577790030151-assets/web-upload/856d0239-48c1-4dfb-9ab5-dac2e4aaacc6.jpeg?x-oss-process=image/resize,w_275"/>
-
+ <img src="https://github.com/yautah/cloudblog/blob/master/snaps/index.png"/>
+ 
+ <img src="https://github.com/yautah/cloudblog/blob/master/snaps/deploy.png"/>
+ 
 </p>
 
 
