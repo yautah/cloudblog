@@ -14,7 +14,7 @@
     </view>
   </nav-bar>
 
-  <add-tips name="hahahha" custom />
+  <!--<add-tips name="hahahha" custom />-->
 
   <view wx:if="{{allCategories}}" class="container" style="margin-top:90rpx">
     <view class="padding-lr bg-white" 
