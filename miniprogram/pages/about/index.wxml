@@ -13,31 +13,6 @@
     <view class="cu-item margin-top" style="position:relative">
 
       <view class="cu-list menu sm-border">
-        <view wx:if="{{(settings && currentUser) && (currentUser.isAdmin || !settings.admin) }}" bind:tap="handleTapManage" class="cu-item">
-          <view class="content">
-            <text class="cuIcon-settings text-orange"></text>
-            <text class="text-grey">{{settings.admin ? '管理入口' : '绑定管理员'}}</text>
-          </view>
-          <view class="action"><text class="cuIcon-right text-gray"></text></view>
-        </view>
-
-
-        <view wx:if="{{settings.subscription && settings.subscription.enable_manual && settings.subscription.template_id}}" bind:tap="handleTapSubscription" class="cu-item">
-          <view class="content">
-            <text class="cuIcon-global text-orange"></text>
-            <text class="text-grey">订阅提醒</text>
-            <mp-badge ext-class="badge"/>
-          </view>
-          <view class="action"><text class="cuIcon-right text-gray"></text></view>
-        </view>
-
-        <view wx:if="{{true}}"  bind:tap="handleTapTest" class="cu-item">
-          <view class="content">
-            <text class="cuIcon-global text-orange"></text>
-            <text class="text-grey">test</text>
-          </view>
-          <view class="action"><text class="cuIcon-right text-gray"></text></view>
-        </view>
 
         <view class="cu-item" style="position:relative">
           <view class="content">
@@ -55,54 +30,7 @@
     </view>
 
 
-    <ad-custom 
-      wx:if="{{adCustomAbout}}"
-      style="margin:16rpx 0" unit-id="{{adCustomAbout.unit_id}}"></ad-custom>
 
-    <block wx:if="{{appsCount}}">
-      <view class="cu-bar bg-white solid-bottom margin-top">
-        <view class="action">更多推荐</view>
-      </view>
-      <view class="cu-card no-card">
-        <view class="cu-item">
-
-          <block wx:for="{{apps}}" wx:key="index">
-            <view class="list-item" bind:tap="handleNavApp" data-app="{{item}}">
-              <image src="{{item.icon}}" class="list-item-icon icon-{{iconStyle}}" />
-              <view class="list-item-content">
-                <view class="list-item-name">{{item.name}}</view>
-                <view class="list-item-desc">{{item.desc}}</view>
-              </view>
-              <view class="list-item-action"><text class="cuIcon-right text-gray"></text></view>
-            </view>
-          </block>
-
-        </view>
-      </view>
-    </block>
   </view>
 </view>
 
-
-<view class="cu-modal {{showModal ?'show':''}}">
-  <view class="cu-dialog">
-    <view class="cu-bar bg-white justify-end">
-      <view class="content">提示</view>
-    </view>
-    <view class="padding-xl">
-      <form>
-        <view class="cu-form-group margin-bottom" style="border-bottom: 1px solid #d1d1d1;background-color:transparent">
-          <input value="{{authCode}}" bind:input="handleInputChange" placeholder="请输入绑定授权码"></input>
-        </view>
-      </form>
-    </view>
-    <view class="cu-bar bg-white">
-      <view class="action margin-0 flex-sub solid-left" bindtap="toggleBindModal">取消</view>
-      <view class="action margin-0 flex-sub text-blue  solid-left" bindtap="handleConfirmBind">确定</view>
-    </view>
-  </view>
-</view>
-
-<!--<tabbar current="{{ settings.tabs.length-1}}" tabs="{{settings.tabs}}" />-->
-
-<subscription-modal show="{{showSubscription}}" />

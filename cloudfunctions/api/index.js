@@ -12,6 +12,7 @@ const TcbRouter = require('tcb-router')
 const articleService = require('./services/article')
 
 exports.main = async (event, context) => {
+  console.log(event)
   const app = new TcbRouter({ event })
 
   app.use(async (ctx, next) => {

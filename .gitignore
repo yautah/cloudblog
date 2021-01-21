@@ -15,6 +15,7 @@ cloudfunctions/.DS_Store
 cloudfunctions/node_modules
 cloudfunctions/miniprogram_npm
 
+private.key
 .env.pro
 .env.local
 deploy.json
