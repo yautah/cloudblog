@@ -22,12 +22,6 @@
 
 
     "hooks": {
-      "preDeploy": {
-        "type": "execCommand",
-        "commands": [
-          "echo export const EnvID =  \\'{{env.ENV_ID}}\\' > miniprogram/utils/env.js"
-        ]
-      },
       "postDeploy": {
         "type": "callFunction",
         "functions":[
