@@ -22,6 +22,12 @@
 
 
     "hooks": {
+      "preDeploy": {
+        "type": "execCommand",
+        "commands": [
+          "node ./writeEnv.js {{env.ENV_ID}}"
+        ]
+      },
       "postDeploy": {
         "type": "callFunction",
         "functions":[
