@@ -39,5 +39,7 @@
 
 拉取项目当本地，进入miniprogram目录，npm install， 并在ide中开启“使用npm模块”，工具中“npm 构建”。
 
+修改 miniprogram/utils/env.js，填入自己的环境id进行本地开发调试（此处的envID在一键部署或者本地tcb cli的时候，是通过prehook自动写入的）。
+
 即可愉快的进行本地的开发了。
 
